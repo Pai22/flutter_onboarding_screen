@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen/screen/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'screen/introduction_screen.dart';
@@ -20,11 +21,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Onboarding Screen',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, //ไม่มีMode
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: IntroScreen(),
+      //home: IntroScreen(),
+      home: show
+          ? IntroScreen()
+          : HomeScreen(), //คำสังifในรูปย่อ ถ้าshowเป็นจริงจะไปหน้าintro ถ้าไม่ใช่จะไปหน้าhomescreen
     );
   }
 }
